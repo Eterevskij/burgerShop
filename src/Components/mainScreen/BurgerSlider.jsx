@@ -2,9 +2,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider from "react-slick";
-import ArrowPrev from '../icons/arrowPrev.png';
-import ArrowNext from '../icons/arrowNext.png';
+import ArrowPrev from '../../icons/arrowPrev.png';
+import ArrowNext from '../../icons/arrowNext.png';
 
+
+
+
+let ArrowBTNContainer = (props) => {
+debugger;
+  return(
+ <ArrowBTN {...props}/>
+  )
+}
 
 let ArrowBTN = (props) => {
   const { className, style, onClick } = props;
@@ -19,13 +28,10 @@ debugger;
 }
 
 export default class SlickGoTo extends React.Component {
-  state = {
-    slideIndex: 0,
-    updateCount: 0
-  };
-
 
   render() {
+  debugger;
+
     const settings = {
       arrows: true,
       dots: false,
@@ -33,24 +39,24 @@ export default class SlickGoTo extends React.Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      prevArrow: <ArrowBTN />,
-      nextArrow: <ArrowBTN />
+      prevArrow: <ArrowBTNContainer />,
+      nextArrow: <ArrowBTNContainer />,
+      beforeChange: (current, next) => {this.props.changeCurrentItem(next); console.log(next)} ,
+
     };
     return (
       <div>
         <Slider {...settings}>
-          <div>
-            <img src="https://i.ibb.co/h9JPGdT/1.png" alt=""/>
-          </div>
-          <div>
-            2
-          </div>
-          <div>
-            3
-          </div>
-          <div>
-            4
-          </div>
+          {this.props.burgers.map(item=>{
+            debugger;
+            return(
+              <div>
+                <img src={item.photo} alt={item.name.name}/>
+            </div>
+            )
+          })
+          }
+
         </Slider>
       </div>
     );

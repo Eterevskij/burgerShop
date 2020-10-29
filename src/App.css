@@ -64,13 +64,12 @@ margin-left: 45px;
   height: 453px;
   width: 330px;
   border: 2px solid #A47D1C;
-  padding: 40px;
+  padding: 40px 30px 40px 40px;
   position: relative;
 }
 
 .burgerCard__title {
   font-size: 72px;
-  color: #C9F910;
   font-family: "Aguafina Script";
   transform: rotate(-8deg);
 }
@@ -110,6 +109,10 @@ margin-left: 45px;
 
 .slick-next:before, .slick-prev:before {
     content: none !important;
+}
+
+.slick-list {
+max-width: 500px; 
 }
 
 .slick-list img {
