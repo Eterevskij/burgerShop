@@ -2,7 +2,7 @@ import React from 'react';
 
 import logo from '../../header/logo.png';
 import Menu from './Menu';
-
+import {NavLink} from 'react-router-dom';
 
 
 let Header = () => {
@@ -10,7 +10,7 @@ let Header = () => {
         <header className="header">
         <div className="container">
 
-          <a className="header__logo" href="#"><img src={logo} alt="No" /></a>
+  <NavLink to="/" className="header__logo"><img src={logo} alt="No" /></NavLink>
           <span>
               
             <Menu />

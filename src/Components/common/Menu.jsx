@@ -1,6 +1,7 @@
 import React from 'react';
 
 import cartLogo from '../../header/shopping-bag1.png';
+import {NavLink} from 'react-router-dom';
 
 
 
@@ -13,7 +14,7 @@ return(
 
 
   <li>
-    <a href="#">Меню</a>
+  <NavLink to="/menu" >Меню</NavLink>
   </li>
 
 

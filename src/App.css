@@ -118,3 +118,119 @@ max-width: 500px;
 .slick-list img {
   margin: 0 auto;
 }
+
+.FoodMenu {
+  padding-top: 60px;
+}
+
+.FoodMenu__BurgersTitle {
+  color: #fff;
+  font-family: 'GothicA1Regular';
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.FoodMenu__Modify {
+  margin-top: 60px;
+}
+
+.FoodMenu__Modify .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FoodMenu__Modify__line {
+  height: 1px;
+  background: #EFEFEF;
+}
+
+.FoodMenu__Modify__Category {
+  transform: translateX(-20px);
+  padding: 35px 0 25px;
+  display: flex;
+  max-width: 420px;
+  justify-content: space-between;
+}
+
+.FoodMenu__Modify__Category__item {
+  font-weight: 600;
+  padding: 5px 20px;
+  border-radius: 6px;
+  color: #fff;
+  letter-spacing: 1.4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.FoodMenu__Modify__Category__item.active {
+  background: #C4C4C4;
+  color: #000;
+}
+
+.FoodMenu__Modify__Sort {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100px
+}
+
+.FoodMenu__Modify__Sort__Text {
+  color: #fff;
+  font-family: "Roboto";
+}
+
+.FoodMenu__itemCards {
+  margin-top: 105px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:  wrap;
+}
+
+.FoodMenu__itemCard__Photo img {
+  max-width: 210px
+}
+
+.FoodMenu__itemCard__Title {
+  text-align: center;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 24px;
+}
+
+.FoodMenu__itemCard__Ingredients {
+  margin-top: 15px;
+  margin-left: 35px;
+}
+
+.FoodMenu__itemCard__Ingredients li{
+  color: #E5E5E5;
+  line-height: 22px;
+}
+
+.FoodMenu__itemCard__Order {
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  max-width:145px;
+}
+
+.FoodMenu__itemCard__Order__ChangeCount {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+}
+
+.FoodMenu__itemCard__Order__Minus, .FoodMenu__itemCard__Order__Plus {
+  background: none;
+  border: none;
+}
+
+.FoodMenu__itemCard__Order__price {
+  font-size: 24px;
+  font-family: 'GothicA1Regular';
+}
