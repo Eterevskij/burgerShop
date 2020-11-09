@@ -11,6 +11,7 @@ let id, searchItem;
 const cartReducer = (state = initialState, action) => {
 
      let findItemInCart = (itemId) => {
+         debugger;
         if(state.cart.length == 0) {return -1};
 
           for(let i = 0; i <  state.cart.length; i++){
@@ -26,6 +27,7 @@ const cartReducer = (state = initialState, action) => {
     switch(action.type) {
         
         case ADD_BURGER:
+                    debugger;
                     id = action.id;
                     searchItem = findItemInCart(id);
 
@@ -37,7 +39,7 @@ const cartReducer = (state = initialState, action) => {
                         return {
                             ...state, 
                             cart: state.cart.map( u =>  {
-                                if (u.id === searchItem) {
+                                if (u.id === id) {
                                     return {...u, count: u.count + 1}
                                 }
                                 return u;
@@ -51,24 +53,26 @@ const cartReducer = (state = initialState, action) => {
                         id = action.id;
                         searchItem = findItemInCart(id);
 
-                        state.cart.map( (u, num1) =>  {
-                            if (u.count === 1) {
-                                state.cart.map( (i, num2) =>  {
-                                    if(state.cart[num2].id == state.cart[num1].id){
-                                        return{...state, ...state.cart.splice(state.cart[num2], 1)};
-                                    }
-                                })
-                            }
-                        })
+                        if(searchItem === -1) return{...state};
 
-                        return {
-                            ...state, 
-                            cart: state.cart.map( u =>  {
-                                if (u.id === searchItem) {
-                                    return {...u, count: u.count - 1}
-                                }
-                                return u;
-                            })}
+                        if(state.cart[searchItem].count === 1){
+                                        return( {...state,
+                                                cart: state.cart.filter((item, index) => item.id !== id)})
+                        } else {
+                            return {
+                                ...state, 
+                                cart: state.cart.map( u =>  {
+                                    if (u.id === id) {
+                                        return {...u, count: u.count - 1}
+                                    }
+                                    return u;
+                                })}
+                        }
+       
+                            
+                      
+
+                      
     
 
 
