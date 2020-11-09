@@ -2,11 +2,11 @@ import {connect} from "react-redux";
 import BurgerSlider from "./BurgerSlider";
 import {changeCurrentItem} from "../../redux/mainScreen-reducer";
 
-let mapStateToProps = (state, props) => {
-    debugger;
+let mapStateToProps = (state) => {
+debugger;
     return {
         currentItem: state.mainScreen.CURRENT_ITEM,
-        burgers: props.burgers
+        burgers: state.burgers.burgers
     }
 }
 let mapDispatchToProps = (dispatch) => {

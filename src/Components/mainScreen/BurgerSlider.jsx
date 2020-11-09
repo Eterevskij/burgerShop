@@ -9,7 +9,7 @@ import ArrowNext from '../../icons/arrowNext.png';
 
 
 let ArrowBTNContainer = (props) => {
-debugger;
+
   return(
  <ArrowBTN {...props}/>
   )
@@ -17,7 +17,7 @@ debugger;
 
 let ArrowBTN = (props) => {
   const { className, style, onClick } = props;
-debugger;
+
   return(
     <div
       className={className}
@@ -30,25 +30,24 @@ debugger;
 export default class SlickGoTo extends React.Component {
 
   render() {
-  debugger;
+ 
 
     const settings = {
       arrows: true,
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: <ArrowBTNContainer />,
       nextArrow: <ArrowBTNContainer />,
-      beforeChange: (current, next) => {this.props.changeCurrentItem(next); console.log(next)} ,
-
+      beforeChange: (current, next) => {this.props.changeCurrentItem(next)} ,
     };
     return (
       <div>
         <Slider {...settings}>
           {this.props.burgers.map(item=>{
-            debugger;
+
             return(
               <div>
                 <img src={item.photo} alt={item.name.name}/>

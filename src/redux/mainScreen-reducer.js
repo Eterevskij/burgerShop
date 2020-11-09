@@ -8,7 +8,6 @@ let initialState = {
 const mainScreenReducer = (state = initialState, action) => {
     switch(action.type) {
         case CHANGE_CURRENT_ITEM:
-            debugger;
             return { ...state, CURRENT_ITEM: action.itemNum};
                 
  

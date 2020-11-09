@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 import Header from './Components/common/Header';
 import MainScreen from './Components/mainScreen/MainScreen';
 import { Route } from 'react-router-dom';
-import FoodMenu from './Components/foodMenu/FoodMenu';
+import FoodMenu from './Components/foodMenu/FoodMenuContainer';
+import {getBurgers} from './redux/burgers-reducer';
 
 
 function App(props) {
+
+  React.useEffect(() => {
+    console.log(getBurgers());
+  }, [])
+
   return (
     <div className="App">
 

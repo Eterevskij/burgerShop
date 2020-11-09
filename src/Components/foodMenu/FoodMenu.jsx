@@ -1,12 +1,11 @@
 import React from 'react';
 
 import sortIcon from '../../icons/sort.png';
-import plusIcon from '../../icons/add.png';
-import minusIcon from '../../icons/minus.png';
-
+import FoodMenuItemCard from './FoodMenuItemCard';
 
 
 let FoodMenu = (props) => {
+    debugger;
     return (
         <div className="FoodMenu">
             <div className="container">
@@ -36,62 +35,13 @@ let FoodMenu = (props) => {
             <div className="container">
                 <div className="FoodMenu__itemCards">
 
-                    <div className="FoodMenu__itemCard">
-                        <div className="FoodMenu__itemCard__Photo"><img src="https://i.ibb.co/h9JPGdT/1.png" alt="" /></div>
-                        <h3 className="FoodMenu__itemCard__Title">Chicago</h3>
-                        <ul className="FoodMenu__itemCard__Ingredients">
-                            <li>булка, котлета (кур.)</li>
-                            <li>сыр “Чеддер”</li>
-                            <li>лист салата</li>
-                        </ul>
-                        <span className="FoodMenu__itemCard__Order">
-                            <p className="FoodMenu__itemCard__Order__price">125 p</p>
+                {props.burgers.map((item, id) => {
 
-                            <span className="FoodMenu__itemCard__Order__ChangeCount">
-                                <button className="FoodMenu__itemCard__Order__Plus"><img src={minusIcon} alt="minus" /></button>
-                                <p className="FoodMenu__itemCard__Order__Count">0</p>
-                                <button className="FoodMenu__itemCard__Order__Minus"><img src={plusIcon} alt="plus" /></button>
-                            </span>
-                        </span>
-                    </div>
-
-                    <div className="FoodMenu__itemCard">
-                        <div className="FoodMenu__itemCard__Photo"><img src="https://i.ibb.co/h9JPGdT/1.png" alt="" /></div>
-                        <h3 className="FoodMenu__itemCard__Title">Chicago</h3>
-                        <ul className="FoodMenu__itemCard__Ingredients">
-                            <li>булка, котлета (кур.)</li>
-                            <li>сыр “Чеддер”</li>
-                            <li>лист салата</li>
-                        </ul>
-                        <span className="FoodMenu__itemCard__Order">
-                            <p className="FoodMenu__itemCard__Order__price">125 p</p>
-
-                            <span className="FoodMenu__itemCard__Order__ChangeCount">
-                                <button className="FoodMenu__itemCard__Order__Plus"><img src={minusIcon} alt="minus" /></button>
-                                <p className="FoodMenu__itemCard__Order__Count">0</p>
-                                <button className="FoodMenu__itemCard__Order__Minus"><img src={plusIcon} alt="plus" /></button>
-                            </span>
-                        </span>
-                    </div>
-
-                    <div className="FoodMenu__itemCard">
-                        <div className="FoodMenu__itemCard__Photo"><img src="https://i.ibb.co/h9JPGdT/1.png" alt="" /></div>
-                        <h3 className="FoodMenu__itemCard__Title">Chicago</h3>
-                        <ul className="FoodMenu__itemCard__Ingredients">
-                            <li>булка, котлета (кур.)</li>
-                            <li>сыр “Чеддер”</li>
-                            <li>лист салата</li>
-                        </ul>
-                        <span className="FoodMenu__itemCard__Order">
-                            <p className="FoodMenu__itemCard__Order__price">125 p</p>
-
-                            <span className="FoodMenu__itemCard__Order__ChangeCount">
-                                <button className="FoodMenu__itemCard__Order__Plus"><img src={minusIcon} alt="minus" /></button>
-                                <p className="FoodMenu__itemCard__Order__Count">1</p>
-                                <button className="FoodMenu__itemCard__Order__Minus"><img src={plusIcon} alt="plus" /></button>
-                            </span>
-                        </span>
-                    </div>
+                     return <FoodMenuItemCard burger={item} cart={props.cart} id={id}
+                     removeItem={props.removeItem} addItem={props.addItem} findItemInCart={props.findItemInCart}/>
+                })
+               
+                }
 
                 </div>
             </div>

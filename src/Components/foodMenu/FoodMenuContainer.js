@@ -1,22 +1,42 @@
 import {connect} from "react-redux";
-import BurgerSlider from "./BurgerSlider";
-import {changeCurrentItem} from "../../redux/mainScreen-reducer";
+import {addItem, removeItem} from "../../redux/cart-reducer";
+import FoodMenu from "./FoodMenu";
 
-let mapStateToProps = (state, props) => {
-    debugger;
+let mapStateToProps = (state) => {
+    debugger
     return {
-        currentItem: state.mainScreen.CURRENT_ITEM,
-        burgers: props.burgers
+        burgers: state.burgers.burgers,
+        cart: state.cart.cart
     }
 }
 let mapDispatchToProps = (dispatch) => {
+
+    let findItemInCart = (cart, id) => {
+        if(cart.length == 0) {return -1};
+    
+          for(let i = 0; i <  cart.length; i++){
+            if( cart[i].id === id){
+                return(i);
+          }
+    };
+    return -1;
+    }
+
     return {
-        changeCurrentItem: (num) => {
-            dispatch(changeCurrentItem(num));
-        }
+        addItem: (id) => {
+            dispatch(addItem(id));
+        },
+
+        removeItem: (id) => {
+            dispatch(removeItem(id));
+        },
+
+        findItemInCart: (cart, id) => {
+            return findItemInCart(cart, id)
+        },
     }
 }
 
-const BurgerSliderContainer = connect(mapStateToProps, mapDispatchToProps)(BurgerSlider);
+const FoodMenuContainer = connect(mapStateToProps, mapDispatchToProps)(FoodMenu);
 
-export default BurgerSliderContainer;
+export default FoodMenuContainer;
