@@ -33,7 +33,9 @@ return(
 </ul>
 
 <span className="cart">
-  <img className="cart_img" src={cartLogo} alt="" />
+  <NavLink to="/cart">
+    <img className="cart_img" src={cartLogo} alt="" />
+  </NavLink>
 </span>
 
 </span>

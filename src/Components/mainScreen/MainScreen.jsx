@@ -4,20 +4,23 @@ import BurgerCardContainer from './BurgerCardContainer';
 import BurgerSliderContainer from './BurgerSliderContainer';
 
 
-let MainScreen = (props) => {  
+let MainScreen = (props) => {
 
-    return(
-      <div className="mainScreen">
+  return (
+    <div className="mainScreen">
       <div className="container">
-      <BurgerCardContainer />
+        <BurgerCardContainer />
 
         <div className="sliderWrapper">
-        <BurgerSliderContainer/>
+          <BurgerSliderContainer />
         </div>
 
       </div>
     </div>
-    )
+  )
 }
 
+
 export default MainScreen;
+
+

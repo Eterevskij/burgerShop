@@ -68,8 +68,6 @@ const cartReducer = (state = initialState, action) => {
                                     return u;
                                 })}
                         }
-       
-                            
                       
 
                       
@@ -85,5 +83,6 @@ const cartReducer = (state = initialState, action) => {
 
 export const addItem = (id) => ({type: ADD_BURGER, id });
 export const removeItem = (id) =>({type: REMOVE_BURGER, id});
+
 
 export default cartReducer;

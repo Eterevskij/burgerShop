@@ -273,3 +273,77 @@ max-width: 500px;
   font-size: 24px;
   font-family: 'GothicA1Regular';
 }
+
+.Cart__Title {
+  color: #fff;
+  font-family: 'GothicA1Regular';
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.Cart {
+  padding-top: 60px;
+}
+
+.Cart__item {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 0;
+}
+
+.Cart_ChangeCount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+}
+
+.Cart__item__Photo {
+  max-height: 80px;
+}
+
+.Cart__item__Name, .Cart__item__price, .Cart_ChangeCount__counter, .Cart__totelProduct {
+  font-family: 'GothicA1Regular';
+  color: #fff;
+}
+
+.Cart__item__Name {
+  font-size: 18px;
+}
+
+.Cart__item__infoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 880px
+}
+
+.Cart__item_Remove{
+  background: none;
+  border: none;
+  transform: rotate(45deg);
+}
+
+.Cart__item__infoInnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 440px;
+}
+
+.Cart__item + .Cart__item {
+  border-top: 1px solid #444444;
+}
+
+.Cart__Wrapper {
+  margin-top: 80px;
+}
+
+.Cart__totelProduct {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
