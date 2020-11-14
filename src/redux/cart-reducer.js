@@ -1,14 +1,19 @@
 const ADD_BURGER = 'ADD_BURGER';
 const REMOVE_BURGER = 'REMOVE_BURGER'
+const DELETE_BURGER = 'DELETE_BURGER'
+const INVERT_SORT_DIRECTION = "INVERT_SORT_DIRECTION"
 
 let initialState = {
-    cart:[]
+    cart:[],
+    isDesc: false
 };
 
 let id, searchItem;
 
 
 const cartReducer = (state = initialState, action) => {
+
+debugger
 
      let findItemInCart = (itemId) => {
          debugger;
@@ -56,8 +61,7 @@ const cartReducer = (state = initialState, action) => {
                         if(searchItem === -1) return{...state};
 
                         if(state.cart[searchItem].count === 1){
-                                        return( {...state,
-                                                cart: state.cart.filter((item, index) => item.id !== id)})
+                            deleteItem(id)
                         } else {
                             return {
                                 ...state, 
@@ -68,13 +72,16 @@ const cartReducer = (state = initialState, action) => {
                                     return u;
                                 })}
                         }
-                      
 
-                      
-    
+                case DELETE_BURGER:
+                    id = action.id;
 
-
-
+                    return( {...state,
+                        cart: state.cart.filter((item, index) => item.id !== id)})
+                
+                case INVERT_SORT_DIRECTION:
+                    return( {...state, isDesc: !state.isDesc})
+                
                 default: return state;
          }
             }
@@ -83,6 +90,7 @@ const cartReducer = (state = initialState, action) => {
 
 export const addItem = (id) => ({type: ADD_BURGER, id });
 export const removeItem = (id) =>({type: REMOVE_BURGER, id});
-
+export const deleteItem = (id) =>({type: DELETE_BURGER, id});
+export const invertSortDirection = () =>({type: INVERT_SORT_DIRECTION});
 
 export default cartReducer;

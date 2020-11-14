@@ -11,7 +11,7 @@ let Header = () => {
         <div className="container">
 
   <NavLink to="/" className="header__logo"><img src={logo} alt="No" /></NavLink>
-          <span>
+          <span className="menuWrapper">
               
             <Menu />
             

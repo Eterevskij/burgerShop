@@ -6,8 +6,23 @@
   margin: 0;
 }
 
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
 body {
   background: #000;
+}
+
+button {
+  border: none;
+  background: none;
+  outline:0 none !important;
 }
 
 .container {
@@ -103,6 +118,10 @@ margin-left: 45px;
   opacity: 0;
 }
 
+.burgerCard__add__minus, .burgerCard__add__plus {
+  cursor: pointer;
+}
+
 .active .burgerCard__add__plus{
   transform: translateX(25px);
 
@@ -175,6 +194,7 @@ max-width: 500px;
 }
 
 .FoodMenu__Modify .container {
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -221,6 +241,10 @@ max-width: 500px;
   font-family: "Roboto";
 }
 
+.FoodMenu__Modify__Sort__Icon {
+  cursor: pointer;
+}
+
 .FoodMenu__itemCards {
   margin-top: 105px;
   display: flex;
@@ -265,6 +289,7 @@ max-width: 500px;
 }
 
 .FoodMenu__itemCard__Order__Minus, .FoodMenu__itemCard__Order__Plus {
+  cursor: pointer;
   background: none;
   border: none;
 }
@@ -310,6 +335,10 @@ max-width: 500px;
   color: #fff;
 }
 
+.Cart_ChangeCount__plus, .Cart_ChangeCount__minus, .Cart__item_Remove {
+  cursor: pointer;
+}
+
 .Cart__item__Name {
   font-size: 18px;
 }
@@ -346,4 +375,198 @@ max-width: 500px;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
+}
+
+.inDev_discription {
+  color: #E5E5E5;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.animatedGears {
+  top:-30%;
+  left: 50%;
+  margin-left: -36px;
+  position: relative;
+}
+
+.animatedGears img {
+  position: absolute;
+  -webkit-animation:spin 8s linear infinite;
+  -moz-animation:spin 8s linear infinite;
+  animation:spin 8s linear infinite;
+}
+
+
+
+.animatedGear1 {
+  width: 30px;
+}
+
+.animatedGear2 {
+  width: 45px;
+  left: 26px;
+  top: 10px
+}
+
+.animatedGear3 {
+  top:37px;
+  left: -2px;
+  width: 35px;
+}
+
+.inDev_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  margin:0px 0 0 -110px;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@media (max-width: 700px){
+
+  .burgerCard {
+    margin: 10% auto;
+    padding: 20px;
+    width: 310px;
+    height: 440px;
+  }
+
+  .burgerCard__photo img{
+    width: 140px;
+    text-align: center;
+
+  }
+
+  .burgerCard__photo {
+     text-align: center;
+  }
+
+  .burgerCard__title {
+    font-size: 55px;
+    margin-left: 35px;
+  }
+
+  .composition__list {
+    margin-left: 15px;
+  }
+
+  .burgerCard__title {
+    margin-top: -12px;
+  }
+
+  .composition__list {
+    font-size: 14px;
+  }
+
+  .composition__list {
+    margin-top: -7px;
+  }
+
+  .burgerCard__price {
+    font-size: 18px;
+  }
+
+  .burgerCard__price{
+    bottom: 48px;
+    margin: 5px 0px 0px 55px;
+  }
+
+  .burgerCard__add {
+    bottom: 52px;
+  } 
+
+  .slick-slide {
+    width: 100vw !important;
+  }
+
+  .Cart__item__Photo {
+    width: 90px;
+  }
+  
+  .Cart__item__Name {
+    display: inline-block;
+    width: 100px;
+  }
+
+  .Cart__item {
+    padding-left: 5px;
+  }
+
+  .Cart__item__infoInnerWrapper {
+    width: 70%;
+    margin-left: 15px;
+  }
+
+  .Cart__item__infoWrapper {
+    width: 75%;
+  } 
+
+  .header__menu__list {
+    z-index: 1;
+    background: #fff;
+    width: 150px;
+    right: 20px;
+    top: 30px;
+    position: absolute;
+    padding: 5px;
+
+  }
+
+  .header__menu__list li {
+    display: block;
+    font-size: 18px;
+  }
+
+  .header__menu__list li:not(:first-child) {
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+.header .container {
+  align-items: stretch;
+}
+
+.menuLogo {
+  position: absolute;
+  right: 15px;
+  top: 25px
+}
+
+.FoodMenu__itemCard__Photo img {
+  width: 150px;
+  display:block;
+  margin:auto;
+}
+
+.FoodMenu__Modify__Category__item {
+  display: block;
+  width: 100% ;
+}
+
+.FoodMenu__Modify__Category {
+  display: block;
+  width: 100vw;
+  margin: 0 auto;
+  transform: none;
+}
+
+.FoodMenu__Modify {
+  margin-top: 40px;
+}
+
+.FoodMenu__itemCards {
+  margin-top: 65px;
+} 
+
+.menuWrapper {
+  width: 400px;
+}
+
 }

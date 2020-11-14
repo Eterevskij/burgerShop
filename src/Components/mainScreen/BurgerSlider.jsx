@@ -16,13 +16,16 @@ let ArrowBTNContainer = (props) => {
 }
 
 let ArrowBTN = (props) => {
-  const { className, style, onClick } = props;
+  const { className, style, onClick, currentSlide, slideCount } = props;
 
+  let isActive = !((currentSlide === 0 && className.includes("slick-prev")) || ( slideCount - 1 === currentSlide) && className.includes("slick-next") );
+
+debugger;
   return(
     <div
       className={className}
-      style={{ ...style, display: "block",  background:`url(${className.includes("slick-prev") ? ArrowPrev : ArrowNext}) no-repeat` }}
-      onClick={onClick}
+      style={{ ...style, display: "block",  background:`url(${className.includes("slick-prev") ? ArrowPrev : ArrowNext}) no-repeat`, opacity:isActive ? 1 : 0.3 }}
+      onClick={isActive ? onClick : ""}
     />
   )
 }

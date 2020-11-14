@@ -9,6 +9,7 @@ let BurgerCard = (props) => {
 debugger;
     return(
 <div className="burgerCard animate__animated animate__bounce">
+
 <p className="burgerCard__title" style={{color: props.burgers[props.currentItem].name.color }}>{props.burgers[props.currentItem].name.name}</p>
 
    <ul className="composition__list">

@@ -1,12 +1,60 @@
 import React from 'react';
 
-import sortIcon from '../../icons/sort.png';
-import FoodMenuItemCard from './FoodMenuItemCard';
 
+import sortIconAsc from '../../icons/sortAsc.png';
+import sortIconDesc from '../../icons/sortDesc.png';
+import FoodMenuItemCard from './FoodMenuItemCard';
+import { useState, useEffect } from 'react';
+import MobileCategorySlider from './MobileCategorySlider';
+
+
+
+    let categories = [
+        {name: "Все", type: "all"},
+        {name: "Мясные", type: "meaty"},
+        {name: "Постные", type: "meatless"},
+        {name: "Вегетарианские", type: "vegetarian"},
+        
+    ]
+
+
+
+
+
+
+  
 
 let FoodMenu = (props) => {
-    debugger;
+
+
+    function getWindowDimensions() {
+        const { innerWidth: width } = window;
+        return {
+          width
+        };
+      }
+      
+      function useWindowDimensions() {
+        const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+      
+        useEffect(() => {
+          function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+          }
+      
+          window.addEventListener('resize', handleResize);
+          return () => window.removeEventListener('resize', handleResize);
+        }, []);
+      
+        return windowDimensions;
+      }
+
+      const { innerWidth: width } = window;
+
+
     return (
+
+
         <div className="FoodMenu">
             <div className="container">
                 <h2 class="FoodMenu__BurgersTitle">Бургеры</h2>
@@ -17,17 +65,25 @@ let FoodMenu = (props) => {
 
                     <span className="FoodMenu__Modify__Category">
 
-                        <button className="FoodMenu__Modify__Category__item">Все</button>
-                        <button className="FoodMenu__Modify__Category__item">Мясные</button>
-                        <button className="FoodMenu__Modify__Category__item">Постные</button>
-                        <button className="FoodMenu__Modify__Category__item">Вегетарианские</button>
+                    { 
+                        (categories.map((item) => {
+                            return(
+                                <button className={`FoodMenu__Modify__Category__item ${item.type === props.currentCategory ? "active" : ""}`} onClick={() => {props.setFilterByCategory(item.type)}}>{item.name}</button>
+                            )
+                        }))
+
+                       
+                    }
+                        
 
                     </span>
 
+                   {(width > 700) &&
                     <span class="FoodMenu__Modify__Sort">
-                        <img class="FoodMenu__Modify__Sort__Icon" src={sortIcon} alt="Sort" />
+                        <span onClick={() => props.invertSortDirection() }><img class="FoodMenu__Modify__Sort__Icon" src={props.isDesc ? sortIconDesc : sortIconAsc} alt="Sort" /></span>
                         <p class="FoodMenu__Modify__Sort__Text">По цене</p>
                     </span>
+                    }
 
                 </div>
                 <div className="FoodMenu__Modify__line" />
